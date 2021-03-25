@@ -1,1 +1,1 @@
-# js-select
+# javascript select plugin
