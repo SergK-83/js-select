@@ -1,7 +1,9 @@
 $select-input-height: 46px;
 
 .select {
+  width: 100%;
   position: relative;
+  z-index: 100;
 
   &.open {
     .select__dropdown {
@@ -10,6 +12,10 @@ $select-input-height: 46px;
 
     .select__input-caret {
       transform: rotate(-180deg);
+    }
+
+    .select__backdrop {
+      display: block;
     }
   }
 
@@ -22,6 +28,7 @@ $select-input-height: 46px;
     padding: 0 35px 0 12px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    background-color: #fff;
     cursor: pointer;
   }
 
@@ -54,11 +61,26 @@ $select-input-height: 46px;
     }
   }
 
+  &__item.active {
+    background-color: #dedede;
+  }
+
   &__input-caret {
     position: absolute;
     right: 8px;
     top: 28%;
     font-size: 25px;
     line-height: 1;
+  }
+
+  &__backdrop {
+    display: none;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
   }
 }
